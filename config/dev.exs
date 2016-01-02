@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :critter4us, Critter4us.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "marick",
+  password: "still have TRUST",
   database: "critter4us_dev",
   hostname: "localhost",
   pool_size: 10
