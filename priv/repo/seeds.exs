@@ -9,3 +9,16 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+users = [
+  %{
+    name: "dev",
+    email: "example@example.com",
+    password_hash: Comeonin.Bcrypt.hashpwsalt("dev"),
+    role: "admin",
+  }
+]
+
+for user <- users do
+  Map.merge(%Critter4us.User{}, user) |> Critter4us.Repo.insert!
+end

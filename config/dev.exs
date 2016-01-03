@@ -45,5 +45,5 @@ config :critter4us, Critter4us.Repo,
 config :openmaize,
   user_model: Critter4us.User,
   repo: Critter4us.Repo,
-  redirect_pages: %{"admin" => "/admin", "user" => "/users",
+  redirect_pages: %{"admin" => "/", "user" => "/",
                     nil => "/", "login" => "/login"}
