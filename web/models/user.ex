@@ -4,8 +4,10 @@ defmodule Critter4us.User do
   alias Openmaize.Signup
 
   schema "users" do
-    field :name, :string
-    field :email, :string
+    # Note: once there's more than one institution, the :login will contain the institution
+    # name. Current thinking: this is gotten from a subdomain like uicvm.critter4us.com
+    field :login, :string
+    field :institution, :string
     field :password_hash, :string
     field :role, :string
 
@@ -22,9 +24,9 @@ defmodule Critter4us.User do
   """
   def changeset(model, params \\ :empty) do
     model
-    |> cast(params, ~w(name role), ~w(email))
-    |> validate_length(:name, min: 1, max: 100)
-    |> unique_constraint(:name)
+    |> cast(params, ~w(login role), ~w())
+    |> validate_length(:login, min: 1, max: 100)
+    |> unique_constraint(:login)
   end
 
   def auth_changeset(model, params) do

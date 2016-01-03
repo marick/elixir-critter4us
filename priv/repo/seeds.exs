@@ -12,11 +12,23 @@
 
 users = [
   %{
-    name: "dev",
-    email: "example@example.com",
-    password_hash: Comeonin.Bcrypt.hashpwsalt("dev"),
+    login: "requester",
+    institution: "uicvm",
+    password_hash: Comeonin.Bcrypt.hashpwsalt("requester"),
+    role: "requester",
+  },
+  %{
+    login: "admin",
+    institution: "uicvm",
+    password_hash: Comeonin.Bcrypt.hashpwsalt("admin"),
     role: "admin",
-  }
+  },
+  %{
+    login: "root",
+    institution: "uicvm",
+    password_hash: Comeonin.Bcrypt.hashpwsalt("root"),
+    role: "superuser",
+  },
 ]
 
 for user <- users do

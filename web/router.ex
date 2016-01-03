@@ -23,17 +23,10 @@ defmodule Critter4us.Router do
     get "/logout", PageController, :logout, as: :logout
   end
 
-  scope "/users", Critter4us do
-    pipe_through :browser
-
-    resources "/", UserController, only: [:index, :show, :edit, :update]
-  end
-
   scope "/admin", Critter4us do
     pipe_through :browser
 
     get "/", AdminController, :index
-    resources "/users", AdminController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.
