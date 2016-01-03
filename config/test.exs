@@ -12,8 +12,16 @@ config :logger, level: :warn
 # Configure your database
 config :critter4us, Critter4us.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "critter4us_test",
+  username: "marick",
+  password: "still have TRUST",
+  database: "elixir_critter4us_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Openmaize authentication library configuration
+config :openmaize,
+  user_model: Critter4us.User,
+  repo: Critter4us.Repo,
+  redirect_pages: %{"admin" => "/admin", "user" => "/users",
+    nil => "/", "login" => "/login"}
+  

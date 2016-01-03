@@ -37,6 +37,13 @@ config :critter4us, Critter4us.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "marick",
   password: "still have TRUST",
-  database: "critter4us_dev",
+  database: "elixir_critter4us_dev",
   hostname: "localhost",
   pool_size: 10
+
+# Openmaize authentication library configuration
+config :openmaize,
+  user_model: Critter4us.User,
+  repo: Critter4us.Repo,
+  redirect_pages: %{"admin" => "/admin", "user" => "/users",
+                    nil => "/", "login" => "/login"}
