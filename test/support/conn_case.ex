@@ -25,6 +25,7 @@ defmodule Critter4us.ConnCase do
       import Ecto.Query, only: [from: 2]
 
       import Critter4us.Router.Helpers
+      import Critter4us.ConnTestHelpers 
 
       # The default endpoint for testing
       @endpoint Critter4us.Endpoint
