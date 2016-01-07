@@ -16,6 +16,7 @@ defmodule Critter4us.AdminControllerTest do
   end
 
   test "GET / when logged in", %{authenticated: conn}  do
+    # :timer.sleep(30000)
     conn = get conn, "/"
     assert html_response(conn, 200)
   end
