@@ -6,14 +6,12 @@ defmodule Critter4us.PageController do
   plug Openmaize.Login when action in [:login_user]
   plug Openmaize.Logout when action in [:logout]
 
-#  plug :authorize, roles: ["superuser", "admin", "requester"]
+  plug :authorize, [roles: ["superuser", "admin", "requester"]] when action in [:index]
 
   def index(conn, _params) do
     if conn.assigns.current_user do
-      Logger.info(inspect conn.assigns)
       render conn, "index.html"
     else
-      Logger.info("NUIL NBUL NLI")
       redirect(conn, to: "/login")
     end
   end
