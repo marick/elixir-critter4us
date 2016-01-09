@@ -1,0 +1,28 @@
+<h2>Listing procedures</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Days delay</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for procedure <- @procedures do %>
+    <tr>
+      <td><%= procedure.name %></td>
+      <td><%= procedure.days_delay %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: procedure_path(@conn, :show, procedure), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: procedure_path(@conn, :edit, procedure), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: procedure_path(@conn, :delete, procedure), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New procedure", to: procedure_path(@conn, :new) %>

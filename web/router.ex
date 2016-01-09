@@ -27,6 +27,7 @@ defmodule Critter4us.Router do
     pipe_through :browser
 
     get "/", AdminController, :index
+    resources "/procedures", ProcedureController
   end
 
   # Other scopes may use custom stacks.

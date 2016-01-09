@@ -1,0 +1,18 @@
+<h2>Show procedure</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @procedure.name %>
+  </li>
+
+  <li>
+    <strong>Days delay:</strong>
+    <%= @procedure.days_delay %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: procedure_path(@conn, :edit, @procedure) %>
+<%= link "Back", to: procedure_path(@conn, :index) %>

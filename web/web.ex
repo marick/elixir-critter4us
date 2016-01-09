@@ -48,6 +48,7 @@ defmodule Critter4us.Web do
       use Phoenix.HTML
 
       import Critter4us.Router.Helpers
+      import Critter4us.ErrorHelpers
     end
   end
 
