@@ -27,3 +27,11 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+# Openmaize authentication library configuration
+config :openmaize,
+  user_model: Critter4us.User,
+  repo: Critter4us.Repo,
+  redirect_pages: %{"admin" => "/", "requester" => "/", "superuser" => "/",
+                    "logout" => "/login", "login" => "/login"}
+  

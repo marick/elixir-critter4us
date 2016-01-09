@@ -3,7 +3,7 @@ defmodule Critter4us.PageController do
   require Logger
   import Openmaize.AccessControl
 
-  plug Openmaize.Login when action in [:login_user]
+  plug Openmaize.Login, [unique_id: :login]  when action in [:login_user]
   plug Openmaize.Logout when action in [:logout]
 
   plug :authorize, [roles: ["superuser", "admin", "requester"]] when action in [:index]

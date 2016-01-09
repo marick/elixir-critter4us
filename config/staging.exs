@@ -31,15 +31,4 @@ config :logger, :console, format: "[$level] $message\n"
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
 
-# Openmaize authentication library configuration
-config :openmaize,
-  user_model: Critter4us.User,
-  repo: Critter4us.Repo,
-  unique_id: "login",
-  redirect_pages: %{"admin" => "/", "requester" => "/", "superuser" => "/",
-                    nil => "/", "login" => "/login"}
-
-  
-IO.puts "PREPARE TO IMPORT"
-  
 import_config "staging.secret.exs"
