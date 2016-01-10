@@ -1,0 +1,6 @@
+<h2>Edit exclusion rule</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: exclusion_rule_path(@conn, :update, @exclusion_rule) %>
+
+<%= link "Back", to: exclusion_rule_path(@conn, :index) %>

@@ -1,0 +1,28 @@
+<h2>Listing exclusion rules</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Procedure</th>
+      <th>Rule</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for exclusion_rule <- @exclusion_rules do %>
+    <tr>
+      <td><%= exclusion_rule.procedure_id %></td>
+      <td><%= exclusion_rule.rule %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: exclusion_rule_path(@conn, :show, exclusion_rule), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: exclusion_rule_path(@conn, :edit, exclusion_rule), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: exclusion_rule_path(@conn, :delete, exclusion_rule), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New exclusion rule", to: exclusion_rule_path(@conn, :new) %>

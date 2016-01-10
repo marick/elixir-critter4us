@@ -28,6 +28,7 @@ defmodule Critter4us.Router do
 
     get "/", AdminController, :index
     resources "/procedures", ProcedureController
+    resources "/exclusion_rules", ExclusionRuleController
   end
 
   # Other scopes may use custom stacks.

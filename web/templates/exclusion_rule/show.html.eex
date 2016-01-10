@@ -1,0 +1,18 @@
+<h2>Show exclusion rule</h2>
+
+<ul>
+
+  <li>
+    <strong>Procedure:</strong>
+    <%= @exclusion_rule.procedure_id %>
+  </li>
+
+  <li>
+    <strong>Rule:</strong>
+    <%= @exclusion_rule.rule %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: exclusion_rule_path(@conn, :edit, @exclusion_rule) %>
+<%= link "Back", to: exclusion_rule_path(@conn, :index) %>
