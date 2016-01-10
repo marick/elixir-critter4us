@@ -1,0 +1,6 @@
+<h2>New procedure description</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: procedure_description_path(@conn, :create) %>
+
+<%= link "Back", to: procedure_description_path(@conn, :index) %>

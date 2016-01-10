@@ -1,0 +1,30 @@
+<h2>Listing procedure descriptions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Procedure</th>
+      <th>Animal kind</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for procedure_description <- @procedure_descriptions do %>
+    <tr>
+      <td><%= procedure_description.procedure_id %></td>
+      <td><%= procedure_description.animal_kind %></td>
+      <td><%= procedure_description.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: procedure_description_path(@conn, :show, procedure_description), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: procedure_description_path(@conn, :edit, procedure_description), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: procedure_description_path(@conn, :delete, procedure_description), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New procedure description", to: procedure_description_path(@conn, :new) %>
