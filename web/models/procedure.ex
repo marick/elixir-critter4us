@@ -4,6 +4,8 @@ defmodule Critter4us.Procedure do
   schema "procedures" do
     field :name, :string
     field :days_delay, :integer
+    has_one :exclusion_rule, Critter4us.ExclusionRule
+    has_many :procedure_descriptions, Critter4us.ProcedureDescription
 
     timestamps
   end
